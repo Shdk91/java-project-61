@@ -9,7 +9,9 @@ public class Prime {
         String message = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
         for (int i = 0; i < 3; i++) {
-            int number = ThreadLocalRandom.current().nextInt(2, 100);
+            int lowBorder = 2;
+            int highBorder = 100;
+            int number = ThreadLocalRandom.current().nextInt(lowBorder, highBorder);
             boolean isPrime = isPrime(number);
             String rightAnswer = "yes";
             if (!isPrime) {

@@ -10,8 +10,10 @@ public class GCD {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
         for (int i = 0; i < 3; i++) {
-            int a = random.nextInt(1, 101);
-            int b = random.nextInt(1, 101);
+            int lowBorder = 1;
+            int highBorder = 101;
+            int a = random.nextInt(lowBorder, highBorder);
+            int b = random.nextInt(lowBorder, highBorder);
             int result = getGCD(a, b);
             String question = a + " " + b;
             if (!Engine.checkAnswer(question, String.valueOf(result), i, message)) {

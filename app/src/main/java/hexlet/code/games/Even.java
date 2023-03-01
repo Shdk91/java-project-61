@@ -9,7 +9,8 @@ public class Even {
         String message = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
         for (int i = 0; i < 3; i++) {
-            int number = ThreadLocalRandom.current().nextInt(0, 100000);
+            int highBorder = 100000;
+            int number = ThreadLocalRandom.current().nextInt(highBorder);
             boolean isEven = number % 2 == 0;
             String rightAnswer = "yes";
             if (!isEven) {

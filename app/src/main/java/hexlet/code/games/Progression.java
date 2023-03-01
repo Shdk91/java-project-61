@@ -11,13 +11,16 @@ public class Progression {
 
         for (int i = 0; i < 3; i++) {
             int[] progression = new int[10];
-            int missMember = random.nextInt(0, 10);
-            int step = random.nextInt(2, 6);
+            int missMember = random.nextInt(progression.length);
+            int lowBorderToStep = 2;
+            int highBorderToStep = 6;
+            int highBorderToFirstMember = 20;
+            int step = random.nextInt(lowBorderToStep, highBorderToStep);
             StringBuilder question = new StringBuilder();
 
             for (int j = 0; j < progression.length; j++) {
                 if (j == 0) {
-                    progression[j] = random.nextInt(0, 20);
+                    progression[j] = random.nextInt(highBorderToFirstMember);
                 } else {
                     progression[j] = progression[j - 1] + step;
                 }

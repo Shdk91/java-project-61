@@ -11,9 +11,11 @@ public class Calc {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
         for (int i = 0; i < 3; i++) {
-            int a = random.nextInt(-10, 21);
-            int b = random.nextInt(-10, 21);
-            int operatorIndex = random.nextInt(0, 3);
+            int lowBorder = -10;
+            int highBorder = 11;
+            int a = random.nextInt(lowBorder, highBorder);
+            int b = random.nextInt(lowBorder, highBorder);
+            int operatorIndex = random.nextInt(operators.length);
             int result = 0;
             switch (operatorIndex) {
                 case 0:
