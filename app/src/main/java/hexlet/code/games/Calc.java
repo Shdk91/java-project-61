@@ -5,16 +5,18 @@ import hexlet.code.Engine;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Calc {
+    private static final int LOW_BORDER = -11;
+    private static final int HIGH_BORDER = 10;
+    private static final int ITERATION_COUNT = 3;
+
     public static void letsPlay() {
         String message = "What is the result of the expression?";
         char[] operators = {'+', '-', '*'};
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
-        for (int i = 0; i < 3; i++) {
-            int lowBorder = -10;
-            int highBorder = 11;
-            int a = random.nextInt(lowBorder, highBorder);
-            int b = random.nextInt(lowBorder, highBorder);
+        for (int i = 0; i < ITERATION_COUNT; i++) {
+            int a = random.nextInt(LOW_BORDER, HIGH_BORDER);
+            int b = random.nextInt(LOW_BORDER, HIGH_BORDER);
             int operatorIndex = random.nextInt(operators.length);
             int result = 0;
             switch (operatorIndex) {
