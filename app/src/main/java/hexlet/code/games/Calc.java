@@ -11,8 +11,8 @@ public class Calc {
         ThreadLocalRandom random = ThreadLocalRandom.current();
 
         for (int i = 0; i < 3; i++) {
-            int a = random.nextInt(-10, 11);
-            int b = random.nextInt(-10, 11);
+            int a = random.nextInt(-10, 21);
+            int b = random.nextInt(-10, 21);
             int operatorIndex = random.nextInt(0, 3);
             int result = 0;
             switch (operatorIndex) {
