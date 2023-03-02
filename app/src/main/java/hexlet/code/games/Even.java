@@ -6,21 +6,28 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class Even {
     private static final int HIGH_BORDER = 100000;
-    private static final int ITERATION_COUNT = 3;
+    private static final String RULE = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void letsPlay() {
-        String message = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+        Engine.processGame(createGameData(), RULE);
+    }
 
-        for (int i = 0; i < ITERATION_COUNT; i++) {
+    private static String[][] createGameData() {
+        String[][] gameData = new String[Engine.ITERATION_COUNT][2];
+        for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
             int number = ThreadLocalRandom.current().nextInt(HIGH_BORDER);
-            boolean isEven = number % 2 == 0;
+            boolean isEven = isEven(number);
             String rightAnswer = "yes";
             if (!isEven) {
                 rightAnswer = "no";
             }
-            if (!Engine.checkAnswer(String.valueOf(number), rightAnswer, i, message)) {
-                break;
-            }
+            gameData[i][0] = String.valueOf(number);
+            gameData[i][1] = rightAnswer;
         }
+        return gameData;
+    }
+
+    private static boolean isEven(int number) {
+        return number % 2 == 0;
     }
 }
