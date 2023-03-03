@@ -1,12 +1,13 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
 public class GCD {
     private static final int LOW_BORDER = 1;
-    private static final int HIGH_BORDER = 101;
+    private static final int HIGH_BORDER = 100;
     private static final String RULE = "Find the greatest common divisor of given numbers.";
 
     public static void letsPlay() {
@@ -14,11 +15,10 @@ public class GCD {
     }
 
     private static String[][] createGameData() {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         String[][] gameData = new String[Engine.ITERATION_COUNT][2];
         for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
-            int a = random.nextInt(LOW_BORDER, HIGH_BORDER);
-            int b = random.nextInt(LOW_BORDER, HIGH_BORDER);
+            int a = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
+            int b = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
             int result = getGCD(a, b);
             String question = a + " " + b;
             gameData[i][0] = question;

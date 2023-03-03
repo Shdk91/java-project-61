@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,13 +16,12 @@ public class Calc {
 
     private static String[][] createGameData() {
         char[] operators = {'+', '-', '*'};
-        ThreadLocalRandom random = ThreadLocalRandom.current();
         String[][] gameData = new String[Engine.ITERATION_COUNT][2];
 
         for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
-            int a = random.nextInt(LOW_BORDER, HIGH_BORDER);
-            int b = random.nextInt(LOW_BORDER, HIGH_BORDER);
-            char operator = operators[random.nextInt(operators.length)];
+            int a = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
+            int b = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
+            char operator = operators[Utils.getRandomInt(operators.length)];
             int result = calculate(a, b, operator);
             String question = String.format("%s %s %s", a, operator, b);
             gameData[i][0] = question;
@@ -41,9 +41,9 @@ public class Calc {
             case '*' -> {
                 return first * second;
             }
-            default -> {
-                return 0;
-            }
+            default ->
+                throw new UnsupportedOperationException("Current operator is not support:" + operator);
+
         }
     }
 }

@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -15,12 +16,9 @@ public class Even {
     private static String[][] createGameData() {
         String[][] gameData = new String[Engine.ITERATION_COUNT][2];
         for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
-            int number = ThreadLocalRandom.current().nextInt(HIGH_BORDER);
+            int number = Utils.getRandomInt(HIGH_BORDER);
             boolean isEven = isEven(number);
-            String rightAnswer = "yes";
-            if (!isEven) {
-                rightAnswer = "no";
-            }
+            String rightAnswer = isEven? "yes" : "no";
             gameData[i][0] = String.valueOf(number);
             gameData[i][1] = rightAnswer;
         }

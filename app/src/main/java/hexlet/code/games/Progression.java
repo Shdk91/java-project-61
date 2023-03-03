@@ -42,9 +42,8 @@ public class Progression {
 
     private static int[] createProgression(int progressionLength, int firstMember, int step) {
         int[] progression = new int[progressionLength];
-        progression[0] = firstMember;
         for (int i = 1; i < progressionLength; i++) {
-            progression[i] = progression[i - 1] + step;
+            progression[i] = firstMember + step * i;
         }
         return progression;
     }

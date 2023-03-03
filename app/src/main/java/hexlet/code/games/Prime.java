@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -17,12 +18,9 @@ public class Prime {
     private static String[][] createGameData() {
         String[][] gameData = new String[Engine.ITERATION_COUNT][2];
         for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
-            int number = ThreadLocalRandom.current().nextInt(LOW_BORDER, HIGH_BORDER);
+            int number = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
             boolean isPrime = isPrime(number);
-            String rightAnswer = "yes";
-            if (!isPrime) {
-                rightAnswer = "no";
-            }
+            String rightAnswer = isPrime? "yes" : "no";
             gameData[i][0] = String.valueOf(number);
             gameData[i][1] = rightAnswer;
         }
@@ -30,7 +28,7 @@ public class Prime {
     }
 
     private static boolean isPrime(int number) {
-        if (number == 1) {
+        if (number <= 1) {
             return false;
         }
         for (int i = 2; i <= Math.sqrt(number); i++) {
