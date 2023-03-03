@@ -6,3 +6,22 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/02e5c1d53f70b8d9e541/test_coverage)](https://codeclimate.com/github/Shdk91/java-project-61/test_coverage)
 
 Скриншоты выполнения https://drive.google.com/drive/u/0/folders/1QZajlFHmv_sutbFTTWSwNY4mvFma4ugn
+
+This is simple math console game
+
+
+## Start
+
+```sh
+make start
+```
+
+## Build
+```sh
+make build
+```
+
+## Run
+```sh
+make run
+```

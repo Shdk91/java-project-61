@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Calc {
     private static final int LOW_BORDER = -11;
     private static final int HIGH_BORDER = 10;
@@ -41,8 +39,7 @@ public class Calc {
             case '*' -> {
                 return first * second;
             }
-            default ->
-                throw new UnsupportedOperationException("Current operator is not support:" + operator);
+            default -> throw new UnsupportedOperationException("Current operator is not support:" + operator);
 
         }
     }

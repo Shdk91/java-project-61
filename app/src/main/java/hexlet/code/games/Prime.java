@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class Prime {
     private static final int LOW_BORDER = 1;
     private static final int HIGH_BORDER = 100;
@@ -20,7 +18,7 @@ public class Prime {
         for (int i = 0; i < Engine.ITERATION_COUNT; i++) {
             int number = Utils.getRandomInt(LOW_BORDER, HIGH_BORDER);
             boolean isPrime = isPrime(number);
-            String rightAnswer = isPrime? "yes" : "no";
+            String rightAnswer = isPrime ? "yes" : "no";
             gameData[i][0] = String.valueOf(number);
             gameData[i][1] = rightAnswer;
         }

@@ -3,8 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.util.concurrent.ThreadLocalRandom;
-
 public class GCD {
     private static final int LOW_BORDER = 1;
     private static final int HIGH_BORDER = 100;
